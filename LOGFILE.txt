@@ -1,0 +1,49 @@
+*started on *
+Question 3 (shortest path between two points)
+- recalled Dijkstra's algorithm from class CSC373
+- went on WikiPedia to find the pseudocode for a solution of Dijkstra's
+- uses priority queue, so we use heapq in python
+- was able to translate it to python without much issue 
+- only problem is that A->A returns 0 in Dijkstra
+- then, we need to step one edge away from A and then calculate the distance from each edge to A, plus the cost of the edge
+- went back and documented
+- cleanup, better variable naming
+
+*started on *
+Question 1 (total route cost)
+- refactored graph creation code outside to share with Q1
+- coded it in and commented it throughout
+- no problems here
+
+*started on *
+Question 2 (number of possible routes)
+- BFS will do for this, recalled it from CSC384..
+- except we need to modify it to get all paths between s and t
+- we don't need edge costs for this, ignore them when the graph is interpreted
+- turns out we do need edge costs for this, add them in
+- BFS allows us the return all paths from souce to destination, and the cost of the path
+- we shouldn't go recursive on this so it's better to go iterative
+- same deal, use priority queue (in this case it doesn't really matter but it's good to build it like this if we expand this problem to weighted BFS eventually)
+- get the algorithm from WikiPedia in pseudocode
+- translate it to Python again
+- if the source is the same as the destination, recur ONCE with the adjacent vertex as the source, add the returned path to the source vertex, and add the cost to the path
+- documentation
+
+* now its time for modularity *
+- move all the questions into their own file
+- code a conductor
+- code a test file template
+
+* documentation (file docstrings and method docstrings) *
+
+* testing *
+- made custom exceptions for better testing and responses
+- finished testing and bugfixes on part_2.py
+- finished testing and bugfixes on part_1.py
+- finished testing and bugfixes on part_3.py
+
+* file IO *
+- allow for a file to be passed for graph creation
+
+* for future *
+- refactor code in part_2.py and part_3.py
